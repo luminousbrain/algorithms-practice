@@ -1,5 +1,6 @@
 package LeetCode.easy;
 
+// 1603. Design Parking System
 public class ParkingSystem {
     private int big;
     private int medium;
@@ -13,16 +14,22 @@ public class ParkingSystem {
 
     public boolean addCar(int carType) {
         if (carType == 1) {
-            big--;
-            return big >= 0;
+            if (big > 0) {
+                big--;
+                return true;
+            }
         }
         if (carType == 2) {
-            medium--;
-            return medium >= 0;
+            if (medium > 0) {
+                medium--;
+                return true;
+            }
         }
         if (carType == 3) {
-            small--;
-            return small >= 0;
+            if (small > 0) {
+                small--;
+                return true;
+            }
         }
         return false;
     }
